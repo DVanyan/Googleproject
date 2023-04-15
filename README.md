@@ -6,4 +6,4 @@ GitHub Actions allows you to design your CI and CD workflows directly in your Gi
 Full Article Published here
 https://medium.com/nerd-for-tech/creating-a-gke-cluster-with-github-actions-dd34e2de50a6
 
-[![GKE Terraform](https://github.com/DVanyan/Googleproject/actions/workflows/googleproject.yml/badge.svg)](https://github.com/DVanyan/Googleproject/actions/workflows/googleproject.yml)
+
