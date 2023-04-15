@@ -8,6 +8,6 @@ node_pool_name         = "google-project-node-pool-1"
 master_version         = "1.24.10-gke.2300"
 worker_nodes_version   = "1.24.10-gke.2300"
 node_locations         = ["us-east1-b", "us-east1-c"]
-worker_nodes_count     = "1"
+worker_nodes_count     = "2"
 worker_nodes_disk_size = "10"
 worker_node_type       = "n1-standard-1"
