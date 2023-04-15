@@ -6,7 +6,7 @@ on:
     - 'gke_tf/**'
     - 'worker_nodes/**' 
     branches:
-      - master
+      - main
   pull_request:
 
 jobs:
