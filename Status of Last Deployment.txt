@@ -1,4 +1,0 @@
-Status of Last Deployment:<br>
-<img src="https://github.com/DVanyan/Googleproject/workflows/"workflow name"/badge.svg?branch=main"><br>
-
-workflow name - Անունը, որ գրած ա ֆայլի մեջ ամենավերևում առանց չակերտ!!!!
