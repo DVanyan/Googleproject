@@ -3,4 +3,4 @@
 
 project_id = "storied-scarab-383615"
 region     = "us-central1"
-credentials = secrets.GCP_SA_KEY
+credentials = ${{ secrets.GCP_SA_KEY }}
