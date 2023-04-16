@@ -12,7 +12,7 @@ on:
 jobs:
   terraform:
     env:
-      GOOGLE_CREDENTIALS: GOOGLE_CD
+      GOOGLE_CREDENTIALS: ${{ env.GOOGLE_CD }}
     name: "Terraform"
     runs-on: ubuntu-latest
     
