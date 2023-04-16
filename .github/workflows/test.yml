@@ -10,6 +10,8 @@ jobs:
   terraform:
     name: "Terraform"
     runs-on: ubuntu-latest
+    env:
+      google_credentials: ${{ secret.GCP_SA_KEY}}
     
     steps:
       - name: Checkout
