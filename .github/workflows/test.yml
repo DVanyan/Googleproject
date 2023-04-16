@@ -17,7 +17,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-    - name: Terraform Format
+      - name: Terraform Format
         id: fmt
         run: terraform fmt -check
 
