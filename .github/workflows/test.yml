@@ -9,11 +9,6 @@ on:
 jobs:
   terraform:
     name: "Terraform"
-      uses: DVanyan/Googleproject@main
-        with:
-          project_id: ${{ secrets.GCP_PROJECT_ID }}
-          service_account_key: ${{ secrets.GCP_SA_KEY }}
-          export_default_credentials: true
     runs-on: ubuntu-latest
     
     steps:
