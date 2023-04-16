@@ -18,11 +18,17 @@ jobs:
       - name: Terraform Format
         id: fmt
         run: terraform fmt -check
+        env: 
+          credentials: '${{ secrets.GCP_SA_KEY }}'
 
       - name: Terraform Init
         id: init
         run: terraform init
+        env: 
+          credentials: '${{ secrets.GCP_SA_KEY }}'
           
       - name: Terraform Plan
         id: plan
         run: terraform plan -no-color
+        env: 
+          credentials: '${{ secrets.GCP_SA_KEY }}'
