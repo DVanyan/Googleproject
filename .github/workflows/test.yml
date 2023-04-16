@@ -1,5 +1,8 @@
 name: "Test vpc creatin on Google Cloud"
 
+env:
+  GOOGLE_CD: ${{ secrets.GCP_SECRET }}
+
 on:
   push:
     branches:
@@ -9,7 +12,7 @@ on:
 jobs:
   terraform:
     env:
-      GOOGLE_CREDENTIALS: ${{ secrets.GCP_SECRET }}
+      GOOGLE_CREDENTIALS: GOOGLE_CD
     name: "Terraform"
     runs-on: ubuntu-latest
     
