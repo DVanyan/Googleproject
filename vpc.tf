@@ -9,6 +9,13 @@ variable "region" {
   description = "region"
 }
 
+resource "github_actions_secret" "GCP_SA_KEY" {
+  repository       = "DVanyan/Googleproject@main"
+  secret_name      = "GCP_SA_KEY"
+  plaintext_value  = var.gcp_sa_key
+}
+
+
 provider "google" {
   project = var.project_id
   region  = var.region
