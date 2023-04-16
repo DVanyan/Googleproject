@@ -1,5 +1,5 @@
 - name: Set up Cloud SDK
-    uses: Googleproject/gcloud_validate@main
+    uses: DVanyan/Googleproject@main
       with:
         project_id: ${{ secrets.GCP_PROJECT_ID }}
         service_account_key: ${{ secrets.GCP_SA_KEY }}
