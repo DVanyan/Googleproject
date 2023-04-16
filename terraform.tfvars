@@ -3,3 +3,9 @@
 
 project_id = "storied-scarab-383615"
 region     = "us-central1"
+
+resource "github_actions_secret" "GCP_SA_KEY" {
+  repository       = "DVanyan/Googleproject"
+  secret_name      = "GCP_SA_KEY"
+  plaintext_value  = var.GCP_SA_KEY
+}
