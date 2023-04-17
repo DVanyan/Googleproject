@@ -1,4 +1,9 @@
 // Configure the Google Cloud provider
+resource "github_actions_secret" "gcp_sa_key" {
+  repository       = "DVanyan/Googleproject"
+  secret_name      = "GCP_SA_KEY"
+  plaintext_value  = var.gcp_sa_key.gcp_sa_key
+}
 
 // Create VPC
 resource "google_compute_network" "vpc" {
