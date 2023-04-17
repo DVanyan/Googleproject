@@ -20,6 +20,9 @@ jobs:
         uses: 'google-github-actions/auth@v0'
         with:
          credentials_json: '${{ secrets.GCP_SA_KEY }}'
+         
+      - name: test
+        run: ls -la 
 
       - name: Terraform Format
         id: fmt
