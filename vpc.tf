@@ -10,7 +10,7 @@ resource "github_actions_secret" "GCP_SA_KEY" {
 
 provider "google" {
 version = "3.5.0"
-credentials = file("/downloads/instance.json")
+credentials = var.gcp_sa_key
 project = "storied-scarab-383615"
 region = "us-central1"
 zone = "us-central1-c"
