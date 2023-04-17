@@ -1,6 +1,6 @@
 // Configure the Google Cloud provider
 provider "google" {
- credentials = "${{ secrets.GCP_SA_KEY }}"
+ credentials = ${{ secrets.GCP_SA_KEY }}
  project     = "${var.gcp_project}" 
  region      = "${var.region}"
 }
