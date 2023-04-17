@@ -1,12 +1,51 @@
-name: Pull Request
-on:
-  pull_request
+name: Create VPC
 
+on:
+  push:
+    branches:
+      - main
+  
 jobs:
-  context:
+  terraform:
+    name: 'Terraform'
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      
     steps:
-      - name: Run Terratest
-        uses: cloudposse/github-action-terratest@main
+      - name: Checkout code
+        uses: actions/checkout@v3
+        
+      - id: 'auth'
+        uses: 'google-github-actions/auth@v0'
         with:
-          sourceDir: test/src
+         credentials_json: '${{ secrets.GKA_SA_KEY }}'
+
+         
+      - name: get-credentials
+        uses: 'google-github-actions/get-gke-credentials@v0'
+        with:
+         cluster_name: ${{ env.GKE_CLUSTER }}
+         location: ${{ env.GKE_LOCATION }}
+
+      - name: Terraform Format
+        id: fmt
+        run: terraform fmt -check
+
+      - name: Terraform Init
+        id: init
+        run: terraform init
+
+      - name: Terraform Plan
+        id: plan
+        if: github.event_name == 'pull_request'
+        run: terraform plan -no-color -input=false
+        continue-on-error: true
+
+      - name: Terraform Plan Status
+        if: steps.plan.outcome == 'failure'
+        run: exit 1      
+
+      - name: Terraform Apply
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: terraform apply -auto-approve -input=false  
