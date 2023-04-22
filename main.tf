@@ -1,3 +1,12 @@
+terraform {
+  cloud {
+    organization = "DavidGoogleProject"
+
+    workspaces {
+      name = "david-test"
+    }
+  }
+}
 // Configure the Google Cloud provider
 
 // Create VPC
