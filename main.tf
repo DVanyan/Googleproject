@@ -7,17 +7,6 @@ resource "google_compute_network" "vpc" {
 }
 
 // Create Subnet
-terraform {
-  backend "remote" {
-    hostname = "app.terraform.io"
-    organization = "DavidGoogleProject"
-
-    workspaces {
-      name = "test_tfstate"
-    }
-  }
-}
-
 resource "google_compute_subnetwork" "subnet" {
   depends_on = [
     google_compute_network.vpc
